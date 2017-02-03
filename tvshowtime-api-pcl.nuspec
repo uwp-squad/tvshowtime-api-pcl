@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>tvshowtime-api-pcl</id>
+        <version>1.0.0</version>
+        <title>TVShowTime Api</title>
+        <authors>David Bottiau</authors>
+        <owners>David Bottiau</owners>
+        <projectUrl>https://github.com/uwp-squad/tvshowtime-api-pcl</projectUrl>
+        <iconUrl>https://www.tvshowtime.com/images/logo_3d.png</iconUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>A .NET library to access the TVShowTime API</description>
+        <releaseNotes>First version</releaseNotes>
+        <copyright>Copyright 2016</copyright>
+        <tags>TVShowTime Api</tags>
+        <dependencies>
+            <group>
+                <dependency id="Newtonsoft.Json" version="[9.0.1,)" />
+                <dependency id="System.Reactive" version="[3.0.1,)" />
+            </group>
+        </dependencies>
+    </metadata>
+
+    <files>
+        <file src=".\TVShowTimeApi\TVShowTimeApi.UniversalWindows\bin\Release\TVShowTimeApi.*.dll" target="lib\portable-win81+wpa81+uap10.0" />
+        <file src=".\TVShowTimeApi\TVShowTimeApi.NetFramework\bin\Release\TVShowTimeApi.*.dll" target="lib\net45" />
+        <!--<file src=".\TVShowTimeApi\TVShowTimeApi.Android\bin\Release\TVShowTimeApi.*.dll" target="lib\monoandroid" />-->
+        <file src=".\TVShowTimeApi\TVShowTimeApi.iOS\bin\Release\TVShowTimeApi.*.dll" target="lib\xamarin.ios" />
+    </files>
+</package>
