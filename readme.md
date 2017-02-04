@@ -1,6 +1,7 @@
 # TVShowTime API
 
 [![Join the chat at https://gitter.im/tvshowtime-api-pcl/Lobby](https://badges.gitter.im/tvshowtime-api-pcl/Lobby.svg)](https://gitter.im/tvshowtime-api-pcl/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build status](https://ci.appveyor.com/api/projects/status/qgr5tvr90j8i1pu2?svg=true)](https://ci.appveyor.com/project/Odonno/tvshowtime-api-pcl)
 
 A .NET library to access the TVShowTime API.
 
