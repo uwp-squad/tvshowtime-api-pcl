@@ -1,5 +1,7 @@
 # TVShowTime API
 
+[![Join the chat at https://gitter.im/tvshowtime-api-pcl/Lobby](https://badges.gitter.im/tvshowtime-api-pcl/Lobby.svg)](https://gitter.im/tvshowtime-api-pcl/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 A .NET library to access the TVShowTime API.
 
 Supported platforms :
