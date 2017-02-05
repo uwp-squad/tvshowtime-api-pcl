@@ -61,6 +61,8 @@ namespace TVShowTimeApi.Model
         public int AiredEpisodes { get; set; }
 
         public int RemainingEpisodesToWatch { get { return AiredEpisodes - SeenEpisodes; } }
+
+        public decimal PercentageSeen { get { return SeenEpisodes / AiredEpisodes; } }
     }
 
     public class ShowImages
