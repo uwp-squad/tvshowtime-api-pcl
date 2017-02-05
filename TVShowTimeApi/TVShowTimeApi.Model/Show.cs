@@ -53,6 +53,9 @@ namespace TVShowTimeApi.Model
         /// </summary>
         [JsonProperty("runtime")]
         public int RunTime { get; set; }
+
+        [JsonProperty("images")]
+        public ShowImages Images { get; set; }
     }
 
     public class ShowImages
