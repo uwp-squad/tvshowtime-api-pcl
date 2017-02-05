@@ -39,9 +39,6 @@ namespace TVShowTimeApi.Model
         [JsonProperty("status")]
         public string Status { get; set; }
 
-        [JsonProperty("aired_episodes")]
-        public int AiredEpisodes { get; set; }
-
         [JsonProperty("hashtag")]
         public string Hashtag { get; set; }
 
@@ -56,6 +53,14 @@ namespace TVShowTimeApi.Model
 
         [JsonProperty("images")]
         public ShowImages Images { get; set; }
+
+        [JsonProperty("seen_episodes")]
+        public int SeenEpisodes { get; set; }
+
+        [JsonProperty("aired_episodes")]
+        public int AiredEpisodes { get; set; }
+
+        public int RemainingEpisodesToWatch { get { return AiredEpisodes - SeenEpisodes; } }
     }
 
     public class ShowImages
