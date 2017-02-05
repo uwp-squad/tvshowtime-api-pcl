@@ -40,10 +40,10 @@ namespace TVShowTimeApi.Model
         public long NumberOfComments { get; set; }
 
         [JsonProperty("is_new")]
-        public bool IsNew { get; set; }
+        public bool? IsNew { get; set; }
 
         [JsonProperty("seen")]
-        public bool Seen { get; set; }
+        public bool? Seen { get; set; }
 
         [JsonProperty("previous_episode")]
         public EpisodePreview PreviousEpisode { get; set; }

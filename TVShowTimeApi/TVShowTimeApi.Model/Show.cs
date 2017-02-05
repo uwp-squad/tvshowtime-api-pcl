@@ -31,10 +31,10 @@ namespace TVShowTimeApi.Model
         public long NumberOfFollowers { get; set; }
 
         [JsonProperty("followed")]
-        public bool Followed { get; set; }
+        public bool? Followed { get; set; }
 
         [JsonProperty("archived")]
-        public bool Archived { get; set; }
+        public bool? Archived { get; set; }
 
         [JsonProperty("status")]
         public string Status { get; set; }
