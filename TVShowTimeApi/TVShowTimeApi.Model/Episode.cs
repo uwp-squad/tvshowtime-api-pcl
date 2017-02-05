@@ -22,10 +22,10 @@ namespace TVShowTimeApi.Model
         public int Season { get; set; }
 
         [JsonProperty("air_date")]
-        public DateTime AirDate { get; set; }
+        public DateTime? AirDate { get; set; }
 
         [JsonProperty("air_time")]
-        public DateTimeOffset AirTime { get; set; }
+        public DateTimeOffset? AirTime { get; set; }
 
         [JsonProperty("network")]
         public string Network { get; set; }

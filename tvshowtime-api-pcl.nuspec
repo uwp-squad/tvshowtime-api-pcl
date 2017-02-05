@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>tvshowtime-api-pcl</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>TVShowTime Api</title>
         <authors>David Bottiau</authors>
         <owners>David Bottiau</owners>
@@ -10,7 +10,7 @@
         <iconUrl>https://www.tvshowtime.com/images/logo_3d.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A .NET library to access the TVShowTime API</description>
-        <releaseNotes>First version</releaseNotes>
+        <releaseNotes>Set date as nullable on Show and Episode model</releaseNotes>
         <copyright>Copyright 2016</copyright>
         <tags>TVShowTime Api</tags>
         <dependencies>
