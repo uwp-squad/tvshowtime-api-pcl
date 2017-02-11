@@ -26,7 +26,7 @@ namespace TVShowTimeApi.Model.Requests
         /// The TVDB ID of the episode (http://thetvdb.com)
         /// </summary>
         [JsonProperty("episode_id")]
-        public int EpisodeId { get; set; }
+        public long EpisodeId { get; set; }
     }
 
     public class EpisodeRequestByImdbId : EpisodeRequest
@@ -44,7 +44,7 @@ namespace TVShowTimeApi.Model.Requests
         /// The TVDB ID of the show (http://thetvdb.com)
         /// </summary>
         [JsonProperty("show_id")]
-        public int ShowId { get; set; }
+        public long ShowId { get; set; }
 
         /// <summary>
         /// Season number of the episode
