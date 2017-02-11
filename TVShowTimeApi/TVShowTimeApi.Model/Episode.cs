@@ -33,6 +33,9 @@ namespace TVShowTimeApi.Model
         [JsonProperty("overview")]
         public string Overview { get; set; }
 
+        [JsonProperty("images")]
+        public EpisodeImages Images { get; set; }
+
         [JsonProperty("show")]
         public Show Show { get; set; }
 
@@ -55,7 +58,19 @@ namespace TVShowTimeApi.Model
         public decimal MeanReate { get; set; }
 
         [JsonProperty("emotion")]
-        public Emotion Emotion { get; set; }
+        public EpisodeEmotion Emotion { get; set; }
+    }
+
+    public class EpisodeImages
+    {
+        [JsonProperty("screen")]
+        public EpisodeScreenImages Screen { get; set; }
+    }
+
+    public class EpisodeScreenImages
+    {
+        [JsonProperty("1")]
+        public string One { get; set; }
     }
 
     public class EpisodePreview
@@ -68,5 +83,17 @@ namespace TVShowTimeApi.Model
 
         [JsonProperty("season_number")]
         public int Season { get; set; }
+
+        [JsonProperty("images")]
+        public EpisodeImages Images { get; set; }
+    }
+
+    public class EpisodeEmotion
+    {
+        [JsonProperty("id")]
+        public int Id { get; set; }
+
+        [JsonProperty("name")]
+        public string Name { get; set; }
     }
 }
