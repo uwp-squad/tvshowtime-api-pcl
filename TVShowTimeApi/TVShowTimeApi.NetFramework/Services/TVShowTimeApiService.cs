@@ -362,19 +362,14 @@ namespace TVShowTimeApi.Services
 
         public async Task<EpisodeResponse> GetEpisodeAsync(EpisodeRequest episodeRequest)
         {
-            string url = _baseApiAddress + $"episode";
+            string url = _baseApiAddress + $"episode?";
 
             var parameters = new Dictionary<string, string>();
             ExtractParametersFromEpisodeRequest(episodeRequest, parameters);
 
-#if __IOS__ || __ANDROID__ || NET45
-            var content = new FormUrlEncodedContent(parameters);
-#endif
-#if NETFX_CORE
-            var content = new HttpFormUrlEncodedContent(parameters);
-#endif
+            url += string.Join("&", parameters.Select(param => $"{param.Key}={param.Value}"));
 
-            return await HttpClient.PostAsync<EpisodeResponse>(url, content);
+            return await HttpClient.GetAsync<EpisodeResponse>(url);
         }
 
         public async Task<Response> MarkEpisodeWatchedAsync(EpisodeRequest episodeRequest, bool publishOnFacebook, bool publishOnTwitter, bool autoFollow = true)
