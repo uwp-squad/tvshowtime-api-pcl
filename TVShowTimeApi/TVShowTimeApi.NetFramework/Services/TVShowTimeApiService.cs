@@ -43,6 +43,7 @@ namespace TVShowTimeApi.Services
                 if (!string.IsNullOrWhiteSpace(Token))
                     httpClient.DefaultRequestHeaders.Add("TVST_ACCESS_TOKEN", Token);
 #endif
+                httpClient.DefaultRequestHeaders.IfModifiedSince = DateTime.UtcNow;
 
                 return httpClient;
             }
