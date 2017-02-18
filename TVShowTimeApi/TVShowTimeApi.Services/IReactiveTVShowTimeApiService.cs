@@ -240,7 +240,7 @@ namespace TVShowTimeApi.Services
         /// <param name="episodeId">The TVDB ID of the episode (http://thetvdb.com)</param>
         /// <param name="emotion">The emotion the user felt</param>
         /// <returns></returns>
-        IObservable<EmotionResponse> SetEmotionForEpisode(int episodeId, Emotion emotion);
+        IObservable<EmotionResponse> SetEmotionForEpisode(long episodeId, Emotion emotion);
 
         /// <summary>
         /// Delete the emotion for an episode
@@ -248,7 +248,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="episodeId">The TVDB ID of the episode (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> DeleteEmotionForEpisode(int episodeId);
+        IObservable<Response> DeleteEmotionForEpisode(long episodeId);
 
         #endregion
     }

@@ -240,7 +240,7 @@ namespace TVShowTimeApi.Services
         /// <param name="episodeId">The TVDB ID of the episode (http://thetvdb.com)</param>
         /// <param name="emotion">The emotion the user felt</param>
         /// <returns></returns>
-        Task<EmotionResponse> SetEmotionForEpisodeAsync(int episodeId, Emotion emotion);
+        Task<EmotionResponse> SetEmotionForEpisodeAsync(long episodeId, Emotion emotion);
 
         /// <summary>
         /// Delete the emotion for an episode
@@ -248,7 +248,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="episodeId">The TVDB ID of the episode (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> DeleteEmotionForEpisodeAsync(int episodeId);
+        Task<Response> DeleteEmotionForEpisodeAsync(long episodeId);
 
         #endregion
     }

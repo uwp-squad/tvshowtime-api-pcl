@@ -168,12 +168,12 @@ namespace TVShowTimeApi.Services
             return _apiService.SaveEpisodeProgressAsync(episodeRequest).ToObservable();
         }
 
-        public IObservable<EmotionResponse> SetEmotionForEpisode(int episodeId, Emotion emotion)
+        public IObservable<EmotionResponse> SetEmotionForEpisode(long episodeId, Emotion emotion)
         {
             return _apiService.SetEmotionForEpisodeAsync(episodeId, emotion).ToObservable();
         }
 
-        public IObservable<Response> DeleteEmotionForEpisode(int episodeId)
+        public IObservable<Response> DeleteEmotionForEpisode(long episodeId)
         {
             return _apiService.DeleteEmotionForEpisodeAsync(episodeId).ToObservable();
         }

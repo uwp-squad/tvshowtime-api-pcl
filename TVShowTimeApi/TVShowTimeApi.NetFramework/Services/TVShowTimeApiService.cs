@@ -453,9 +453,9 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<EpisodeProgressResponse>(url, content);
         }
 
-        public async Task<EmotionResponse> SetEmotionForEpisodeAsync(int episodeId, Emotion emotion)
+        public async Task<EmotionResponse> SetEmotionForEpisodeAsync(long episodeId, Emotion emotion)
         {
-            string url = _baseApiAddress + $"emotion";
+            string url = _baseApiAddress + $"emotion?";
 
             var parameters = new Dictionary<string, string>
             {
@@ -463,17 +463,12 @@ namespace TVShowTimeApi.Services
                 { "emotion_id", ((int)emotion).ToString() }
             };
 
-#if __IOS__ || __ANDROID__ || NET45
-            var content = new FormUrlEncodedContent(parameters);
-#endif
-#if NETFX_CORE
-            var content = new HttpFormUrlEncodedContent(parameters);
-#endif
+            url += string.Join("&", parameters.Select(param => $"{param.Key}={param.Value}"));
 
-            return await HttpClient.PostAsync<EmotionResponse>(url, content);
+            return await HttpClient.PostAsync<EmotionResponse>(url, null);
         }
 
-        public async Task<Response> DeleteEmotionForEpisodeAsync(int episodeId)
+        public async Task<Response> DeleteEmotionForEpisodeAsync(long episodeId)
         {
             string url = _baseApiAddress + $"delete_emotion";
 
