@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>tvshowtime-api-pcl</id>
-        <version>1.0.14</version>
+        <version>1.0.15</version>
         <title>TVShowTime Api</title>
         <authors>David Bottiau</authors>
         <owners>David Bottiau</owners>

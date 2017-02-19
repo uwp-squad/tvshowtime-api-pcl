@@ -54,6 +54,9 @@ namespace TVShowTimeApi.Model
         [JsonProperty("images")]
         public ShowImages Images { get; set; }
 
+        [JsonProperty("all_images")]
+        public ShowImages AllImages { get; set; }
+
         [JsonProperty("seen_episodes")]
         public int? SeenEpisodes { get; set; }
 
