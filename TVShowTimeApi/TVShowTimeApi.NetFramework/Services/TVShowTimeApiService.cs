@@ -162,21 +162,8 @@ namespace TVShowTimeApi.Services
 
         public async Task<Response> FollowShowAsync(long showId)
         {
-            string url = _baseApiAddress + $"follow";
-
-            var parameters = new Dictionary<string, string>
-            {
-                { "show_id", showId.ToString() }
-            };
-
-#if __IOS__ || __ANDROID__ || NET45
-            var content = new FormUrlEncodedContent(parameters);
-#endif
-#if NETFX_CORE
-            var content = new HttpFormUrlEncodedContent(parameters);
-#endif
-
-            return await HttpClient.PostAsync<Response>(url, content);
+            string url = _baseApiAddress + $"follow?show_id={showId}";
+            return await HttpClient.PostAsync<Response>(url, null);
         }
 
         public async Task<BooleanResponse> GetIsShowFollowedAsync(long showId)
@@ -187,21 +174,8 @@ namespace TVShowTimeApi.Services
 
         public async Task<Response> UnfollowShowAsync(long showId)
         {
-            string url = _baseApiAddress + $"unfollow";
-
-            var parameters = new Dictionary<string, string>
-            {
-                { "show_id", showId.ToString() }
-            };
-
-#if __IOS__ || __ANDROID__ || NET45
-            var content = new FormUrlEncodedContent(parameters);
-#endif
-#if NETFX_CORE
-            var content = new HttpFormUrlEncodedContent(parameters);
-#endif
-
-            return await HttpClient.PostAsync<Response>(url, content);
+            string url = _baseApiAddress + $"unfollow?show_id={showId}";
+            return await HttpClient.PostAsync<Response>(url, null);
         }
 
         public async Task<Response> ArchiveShowAsync(long showId)
