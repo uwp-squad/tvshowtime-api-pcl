@@ -143,7 +143,7 @@ namespace TVShowTimeApi.Services
             return await HttpClient.GetAsync<ExploreResponse>(url);
         }
 
-        public async Task<ShowResponse> GetShowAsync(string showId, string showName, bool includeEpisodes, bool exactMatchName = false)
+        public async Task<ShowResponse> GetShowAsync(long showId, string showName, bool includeEpisodes, bool exactMatchName = false)
         {
             string url = _baseApiAddress + $"show?show_id={showId}&show_name={showName}";
 
@@ -160,13 +160,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.GetAsync<ShowResponse>(url);
         }
 
-        public async Task<Response> FollowShowAsync(string showId)
+        public async Task<Response> FollowShowAsync(long showId)
         {
             string url = _baseApiAddress + $"follow";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -179,19 +179,19 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<BooleanResponse> GetIsShowFollowedAsync(string showId)
+        public async Task<BooleanResponse> GetIsShowFollowedAsync(long showId)
         {
             string url = _baseApiAddress + $"follow?show_id={showId}";
             return await HttpClient.GetAsync<BooleanResponse>(url);
         }
 
-        public async Task<Response> UnfollowShowAsync(string showId)
+        public async Task<Response> UnfollowShowAsync(long showId)
         {
             string url = _baseApiAddress + $"unfollow";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -204,13 +204,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<Response> ArchiveShowAsync(string showId)
+        public async Task<Response> ArchiveShowAsync(long showId)
         {
             string url = _baseApiAddress + $"archive";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -223,19 +223,19 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<BooleanResponse> GetIsShowArchivedAsync(string showId)
+        public async Task<BooleanResponse> GetIsShowArchivedAsync(long showId)
         {
             string url = _baseApiAddress + $"archive?show_id={showId}";
             return await HttpClient.GetAsync<BooleanResponse>(url);
         }
 
-        public async Task<Response> UnarchiveShowAsync(string showId)
+        public async Task<Response> UnarchiveShowAsync(long showId)
         {
             string url = _baseApiAddress + $"unarchive";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -248,13 +248,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<Response> MarkShowWatchedAsync(string showId)
+        public async Task<Response> MarkShowWatchedAsync(long showId)
         {
             string url = _baseApiAddress + $"show_progress";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -267,13 +267,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<Response> SaveShowProgressAsync(string showId, int season, int? episode)
+        public async Task<Response> SaveShowProgressAsync(long showId, int season, int? episode)
         {
             string url = _baseApiAddress + $"show_progress";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId },
+                { "show_id", showId.ToString() },
                 { "season", season.ToString() }
             };
 
@@ -290,13 +290,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<Response> UnmarkShowWatchedAsync(string showId)
+        public async Task<Response> UnmarkShowWatchedAsync(long showId)
         {
             string url = _baseApiAddress + $"delete_show_progress";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId }
+                { "show_id", showId.ToString() }
             };
 
 #if __IOS__ || __ANDROID__ || NET45
@@ -309,13 +309,13 @@ namespace TVShowTimeApi.Services
             return await HttpClient.PostAsync<Response>(url, content);
         }
 
-        public async Task<Response> DeleteShowProgressAsync(string showId, int season, int? episode)
+        public async Task<Response> DeleteShowProgressAsync(long showId, int season, int? episode)
         {
             string url = _baseApiAddress + $"delete_show_progress";
 
             var parameters = new Dictionary<string, string>
             {
-                { "show_id", showId },
+                { "show_id", showId.ToString() },
                 { "season", season.ToString() }
             };
 

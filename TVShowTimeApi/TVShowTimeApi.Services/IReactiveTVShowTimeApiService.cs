@@ -92,7 +92,7 @@ namespace TVShowTimeApi.Services
         /// <param name="includeEpisodes">Include all episodes in results</param>
         /// <param name="exactMatchName">Do exact match for show name</param>
         /// <returns></returns>
-        IObservable<ShowResponse> GetShow(string showId, string showName, bool includeEpisodes, bool exactMatchName = false);
+        IObservable<ShowResponse> GetShow(long showId, string showName, bool includeEpisodes, bool exactMatchName = false);
 
         /// <summary>
         /// Follow a show 
@@ -100,7 +100,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> FollowShow(string showId);
+        IObservable<Response> FollowShow(long showId);
 
         /// <summary>
         /// Returns a value indicating if the show is followed or not by the user 
@@ -108,7 +108,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<BooleanResponse> GetIsShowFollowed(string showId);
+        IObservable<BooleanResponse> GetIsShowFollowed(long showId);
 
         /// <summary>
         /// Unfollow a show 
@@ -116,7 +116,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> UnfollowShow(string showId);
+        IObservable<Response> UnfollowShow(long showId);
 
         /// <summary>
         /// Archive a show 
@@ -124,7 +124,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> ArchiveShow(string showId);
+        IObservable<Response> ArchiveShow(long showId);
 
         /// <summary>
         /// Returns a value indicating if the show is archived or not by the user 
@@ -132,7 +132,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<BooleanResponse> GetIsShowArchived(string showId);
+        IObservable<BooleanResponse> GetIsShowArchived(long showId);
 
         /// <summary>
         /// Unarchive a show 
@@ -140,7 +140,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> UnarchiveShow(string showId);
+        IObservable<Response> UnarchiveShow(long showId);
 
         /// <summary>
         /// Mark the show (all seasons, all episodes seen)
@@ -148,7 +148,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> MarkShowWatched(string showId);
+        IObservable<Response> MarkShowWatched(long showId);
 
         /// <summary>
         /// Set the progress for a show 
@@ -158,7 +158,7 @@ namespace TVShowTimeApi.Services
         /// <param name="season">The season number</param>
         /// <param name="episode">The episode number (if not set, mark the whole season seen)</param>
         /// <returns></returns>
-        IObservable<Response> SaveShowProgress(string showId, int season, int? episode);
+        IObservable<Response> SaveShowProgress(long showId, int season, int? episode);
 
         /// <summary>
         /// Unmark the show (all seasons, all episodes not seen)
@@ -166,7 +166,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        IObservable<Response> UnmarkShowWatched(string showId);
+        IObservable<Response> UnmarkShowWatched(long showId);
 
         /// <summary>
         /// Delete the progress for a show 
@@ -176,7 +176,7 @@ namespace TVShowTimeApi.Services
         /// <param name="season">The season number</param>
         /// <param name="episode">The episode number (if not set, unmark the whole season seen)</param>
         /// <returns></returns>
-        IObservable<Response> DeleteShowProgress(string showId, int season, int? episode);
+        IObservable<Response> DeleteShowProgress(long showId, int season, int? episode);
 
         #endregion
 

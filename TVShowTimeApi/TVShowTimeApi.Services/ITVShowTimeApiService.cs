@@ -92,7 +92,7 @@ namespace TVShowTimeApi.Services
         /// <param name="includeEpisodes">Include all episodes in results</param>
         /// <param name="exactMatchName">Do exact match for show name</param>
         /// <returns></returns>
-        Task<ShowResponse> GetShowAsync(string showId, string showName, bool includeEpisodes, bool exactMatchName = false);
+        Task<ShowResponse> GetShowAsync(long showId, string showName, bool includeEpisodes, bool exactMatchName = false);
 
         /// <summary>
         /// Follow a show 
@@ -100,7 +100,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> FollowShowAsync(string showId);
+        Task<Response> FollowShowAsync(long showId);
 
         /// <summary>
         /// Returns a value indicating if the show is followed or not by the user 
@@ -108,7 +108,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<BooleanResponse> GetIsShowFollowedAsync(string showId);
+        Task<BooleanResponse> GetIsShowFollowedAsync(long showId);
 
         /// <summary>
         /// Unfollow a show 
@@ -116,7 +116,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> UnfollowShowAsync(string showId);
+        Task<Response> UnfollowShowAsync(long showId);
 
         /// <summary>
         /// Archive a show 
@@ -124,7 +124,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> ArchiveShowAsync(string showId);
+        Task<Response> ArchiveShowAsync(long showId);
 
         /// <summary>
         /// Returns a value indicating if the show is archived or not by the user 
@@ -132,7 +132,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<BooleanResponse> GetIsShowArchivedAsync(string showId);
+        Task<BooleanResponse> GetIsShowArchivedAsync(long showId);
 
         /// <summary>
         /// Unarchive a show 
@@ -140,7 +140,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> UnarchiveShowAsync(string showId);
+        Task<Response> UnarchiveShowAsync(long showId);
 
         /// <summary>
         /// Mark the show (all seasons, all episodes seen)
@@ -148,7 +148,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> MarkShowWatchedAsync(string showId);
+        Task<Response> MarkShowWatchedAsync(long showId);
 
         /// <summary>
         /// Set the progress for a show 
@@ -158,7 +158,7 @@ namespace TVShowTimeApi.Services
         /// <param name="season">The season number</param>
         /// <param name="episode">The episode number (if not set, mark the whole season seen)</param>
         /// <returns></returns>
-        Task<Response> SaveShowProgressAsync(string showId, int season, int? episode);
+        Task<Response> SaveShowProgressAsync(long showId, int season, int? episode);
 
         /// <summary>
         /// Unmark the show (all seasons, all episodes not seen)
@@ -166,7 +166,7 @@ namespace TVShowTimeApi.Services
         /// </summary>
         /// <param name="showId">The TVDB ID of the show (http://thetvdb.com)</param>
         /// <returns></returns>
-        Task<Response> UnmarkShowWatchedAsync(string showId);
+        Task<Response> UnmarkShowWatchedAsync(long showId);
 
         /// <summary>
         /// Delete the progress for a show 
@@ -176,7 +176,7 @@ namespace TVShowTimeApi.Services
         /// <param name="season">The season number</param>
         /// <param name="episode">The episode number (if not set, unmark the whole season seen)</param>
         /// <returns></returns>
-        Task<Response> DeleteShowProgressAsync(string showId, int season, int? episode);
+        Task<Response> DeleteShowProgressAsync(long showId, int season, int? episode);
 
         #endregion
 

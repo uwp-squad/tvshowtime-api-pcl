@@ -79,57 +79,57 @@ namespace TVShowTimeApi.Services
             return _apiService.GetTrendingShowsAsync(page, limit).ToObservable();
         }
 
-        public IObservable<ShowResponse> GetShow(string showId, string showName, bool includeEpisodes, bool exactMatchName = false)
+        public IObservable<ShowResponse> GetShow(long showId, string showName, bool includeEpisodes, bool exactMatchName = false)
         {
             return _apiService.GetShowAsync(showId, showName, includeEpisodes, exactMatchName).ToObservable();
         }
 
-        public IObservable<Response> FollowShow(string showId)
+        public IObservable<Response> FollowShow(long showId)
         {
             return _apiService.FollowShowAsync(showId).ToObservable();
         }
 
-        public IObservable<BooleanResponse> GetIsShowFollowed(string showId)
+        public IObservable<BooleanResponse> GetIsShowFollowed(long showId)
         {
             return _apiService.GetIsShowFollowedAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> UnfollowShow(string showId)
+        public IObservable<Response> UnfollowShow(long showId)
         {
             return _apiService.UnfollowShowAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> ArchiveShow(string showId)
+        public IObservable<Response> ArchiveShow(long showId)
         {
             return _apiService.ArchiveShowAsync(showId).ToObservable();
         }
 
-        public IObservable<BooleanResponse> GetIsShowArchived(string showId)
+        public IObservable<BooleanResponse> GetIsShowArchived(long showId)
         {
             return _apiService.GetIsShowArchivedAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> UnarchiveShow(string showId)
+        public IObservable<Response> UnarchiveShow(long showId)
         {
             return _apiService.UnarchiveShowAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> MarkShowWatched(string showId)
+        public IObservable<Response> MarkShowWatched(long showId)
         {
             return _apiService.MarkShowWatchedAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> SaveShowProgress(string showId, int season, int? episode)
+        public IObservable<Response> SaveShowProgress(long showId, int season, int? episode)
         {
             return _apiService.SaveShowProgressAsync(showId, season, episode).ToObservable();
         }
 
-        public IObservable<Response> UnmarkShowWatched(string showId)
+        public IObservable<Response> UnmarkShowWatched(long showId)
         {
             return _apiService.UnmarkShowWatchedAsync(showId).ToObservable();
         }
 
-        public IObservable<Response> DeleteShowProgress(string showId, int season, int? episode)
+        public IObservable<Response> DeleteShowProgress(long showId, int season, int? episode)
         {
             return _apiService.DeleteShowProgressAsync(showId, season, episode).ToObservable();
         }
