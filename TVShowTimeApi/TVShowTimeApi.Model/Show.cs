@@ -28,7 +28,7 @@ namespace TVShowTimeApi.Model
         public EpisodeNumber NextAired { get; set; }
 
         [JsonProperty("nb_followers")]
-        public long NumberOfFollowers { get; set; }
+        public long? NumberOfFollowers { get; set; }
 
         [JsonProperty("followed")]
         public bool? Followed { get; set; }
@@ -43,30 +43,45 @@ namespace TVShowTimeApi.Model
         public string Hashtag { get; set; }
 
         [JsonProperty("number_of_seasons")]
-        public int NumberOfSeasons { get; set; }
+        public int? NumberOfSeasons { get; set; }
 
         /// <summary>
         /// Time of an episode (in minutes)
         /// </summary>
         [JsonProperty("runtime")]
-        public int RunTime { get; set; }
+        public int? RunTime { get; set; }
 
         [JsonProperty("images")]
         public ShowImages Images { get; set; }
 
         [JsonProperty("seen_episodes")]
-        public int SeenEpisodes { get; set; }
+        public int? SeenEpisodes { get; set; }
 
         [JsonProperty("aired_episodes")]
-        public int AiredEpisodes { get; set; }
+        public int? AiredEpisodes { get; set; }
 
-        public int RemainingEpisodesToWatch { get { return AiredEpisodes - SeenEpisodes; } }
+        public int? RemainingEpisodesToWatch
+        {
+            get
+            {
+                if (AiredEpisodes == null || AiredEpisodes == 0)
+                    return null;
+
+                if (SeenEpisodes == null)
+                    return null;
+
+                return AiredEpisodes - SeenEpisodes;
+            }
+        }
 
         public decimal? PercentageSeen
         {
             get
             {
-                if (AiredEpisodes == 0)
+                if (AiredEpisodes == null || AiredEpisodes == 0)
+                    return null;
+
+                if (SeenEpisodes == null)
                     return null;
 
                 return ((decimal)SeenEpisodes / AiredEpisodes) * 100;
