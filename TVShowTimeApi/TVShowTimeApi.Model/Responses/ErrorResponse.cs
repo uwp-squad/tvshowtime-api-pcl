@@ -9,6 +9,9 @@ namespace TVShowTimeApi.Model.Responses
 {
     public class ErrorResponse : Response
     {
+        [JsonProperty("code")]
+        public string Code { get; set; }
+
         [JsonProperty("message")]
         public string Message { get; set; }
     }
