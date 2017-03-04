@@ -143,9 +143,12 @@ namespace TVShowTimeApi.Services
             return await HttpClient.GetAsync<ExploreResponse>(url);
         }
 
-        public async Task<ShowResponse> GetShowAsync(long showId, string showName, bool includeEpisodes, bool exactMatchName = false)
+        public async Task<ShowResponse> GetShowAsync(long showId, string showName = "", bool includeEpisodes = false, bool exactMatchName = false)
         {
-            string url = _baseApiAddress + $"show?show_id={showId}&show_name={showName}";
+            string url = _baseApiAddress + $"show?show_id={showId}";
+
+            if (!string.IsNullOrWhiteSpace(showName))
+                url += $"&show_name={showName}";
 
             if (includeEpisodes)
                 url += "&include_episodes=1";

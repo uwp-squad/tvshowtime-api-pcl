@@ -92,7 +92,7 @@ namespace TVShowTimeApi.Services
         /// <param name="includeEpisodes">Include all episodes in results</param>
         /// <param name="exactMatchName">Do exact match for show name</param>
         /// <returns></returns>
-        Task<ShowResponse> GetShowAsync(long showId, string showName, bool includeEpisodes, bool exactMatchName = false);
+        Task<ShowResponse> GetShowAsync(long showId, string showName = "", bool includeEpisodes = false, bool exactMatchName = false);
 
         /// <summary>
         /// Follow a show 

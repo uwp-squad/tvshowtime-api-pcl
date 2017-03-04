@@ -79,7 +79,7 @@ namespace TVShowTimeApi.Services
             return _apiService.GetTrendingShowsAsync(page, limit).ToObservable();
         }
 
-        public IObservable<ShowResponse> GetShow(long showId, string showName, bool includeEpisodes, bool exactMatchName = false)
+        public IObservable<ShowResponse> GetShow(long showId, string showName = "", bool includeEpisodes = false, bool exactMatchName = false)
         {
             return _apiService.GetShowAsync(showId, showName, includeEpisodes, exactMatchName).ToObservable();
         }
