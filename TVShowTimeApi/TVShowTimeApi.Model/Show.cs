@@ -19,7 +19,7 @@ namespace TVShowTimeApi.Model
         public string Overview { get; set; }
 
         [JsonProperty("last_seen")]
-        public DateTime? LastSeen { get; set; }
+        public EpisodeNumber LastSeen { get; set; }
 
         [JsonProperty("last_aired")]
         public EpisodeNumber LastAired { get; set; }
