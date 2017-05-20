@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>tvshowtime-api-pcl</id>
-        <version>1.0.20</version>
+        <version>1.0.21</version>
         <title>TVShowTime Api</title>
         <authors>David Bottiau</authors>
         <owners>David Bottiau</owners>
@@ -10,7 +10,7 @@
         <iconUrl>https://www.tvshowtime.com/images/logo_3d.png</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>A .NET library to access the TVShowTime API</description>
-        <releaseNotes>Fix LastSeen property in show model</releaseNotes>
+        <releaseNotes>Add episodes property to Show model</releaseNotes>
         <copyright>Copyright 2016</copyright>
         <tags>TVShowTime Api</tags>
         <dependencies>
